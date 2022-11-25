@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "isi password masing masing",
+    "database": "parentCare_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "isi password masing masing",
+    "database": "parentCare_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "isi password masing masing",
+    "database": "parentCare_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
