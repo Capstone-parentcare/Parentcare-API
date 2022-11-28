@@ -1,12 +1,10 @@
 const {doctors}         = require('../models/doctors');
-var authorization  = require('./../library/library');
+var authorization  = require('../library/library');
 module.exports =async function checkUser(req, res, next) {
     let auth    = req.headers["authorization"];
     if(auth){
         try{
-            // console.log("auth", auth);
             let token   = auth.slice(7);
-            // console.log("token", token);
             var tokenVerif = authorization.verifyJWT(token);
             console.log("Gmail:", tokenVerif.username);
             console.log("Token Verif:", tokenVerif);
