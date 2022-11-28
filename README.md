@@ -13,5 +13,5 @@ npx sequelize db:migrate
 
 ### Run App
 ```
-node api.js
+nodemon api.js
 ```
