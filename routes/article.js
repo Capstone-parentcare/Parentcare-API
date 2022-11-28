@@ -1,5 +1,5 @@
 const router = require('express').Router();
 
-const ArticleService = require('../service/article');
+const ArticleService = require('../services/article');
  
 module.exports = router; 

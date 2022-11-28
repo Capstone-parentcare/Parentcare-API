@@ -15,13 +15,13 @@ global.libraryAdmin = require('./library/libraryAdmin');
 app.use(bodyParser.json())
 var checkUser    = require('./middleware/checkUser');
 
-var articlesPost   = require('./service/articlePost');
-var articleGet   = require('./service/articleGet');
-var articleGetDetail   = require('./service/articleDetail');
-var articleDelete   = require('./service/articleDelete');
+var articlesPost   = require('./services/articlePost');
+var articleGet   = require('./services/articleGet');
+var articleGetDetail   = require('./services/articleDetail');
+var articleDelete   = require('./services/articleDelete');
 
-var upload       = require('./service/userUpload');
-var getImage     = require('./service/getImage');
+var upload       = require('./services/userUpload');
+var getImage     = require('./services/getImage');
 app.use(express.json());
 app.use(cors());
 

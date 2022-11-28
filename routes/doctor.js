@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const doctorService = require('../service/doctor');
+const doctorService = require('../services/doctor');
 
 router.post('/', doctorService.post);
 router.get('/', doctorService.get);

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const answerService = require('../service/answer');
+const answerService = require('../services/answer');
 
 router.get('/', answerService.get);
 router.get('/:id', answerService.detail);

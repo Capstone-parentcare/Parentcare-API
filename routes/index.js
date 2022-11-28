@@ -5,8 +5,8 @@ const questionRoutes = require('./question');
 const answerRoutes = require('./answer');
 const articleRoutes = require('./article');
 
-const auth = require('../service/auth');
-const index = require('../service/index');
+const auth = require('../services/auth');
+const index = require('../services/index');
 
 router.use('/doctors', doctorRoutes);
 router.use('/questions', questionRoutes);

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const questionService = require('../service/question');
+const questionService = require('../services/question');
 
 router.get('/', questionService.get);
 router.get('/:id', questionService.detail);
