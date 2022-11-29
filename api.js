@@ -15,11 +15,6 @@ global.libraryAdmin = require('./library/libraryAdmin');
 app.use(bodyParser.json())
 var checkUser    = require('./middleware/checkUser');
 
-var articlesPost   = require('./services/articlePost');
-var articleGet   = require('./services/articleGet');
-var articleGetDetail   = require('./services/articleDetail');
-var articleDelete   = require('./services/articleDelete');
-
 var upload       = require('./services/userUpload');
 var getImage     = require('./services/getImage');
 app.use(express.json());
@@ -29,10 +24,6 @@ const routes = require('./routes');
 
 app.use('/api', routes)
 
-app.post('/addArticle',articlesPost)
-app.get('/articles',articleGet)
-app.get('/articles/:id',articleGetDetail)
-app.delete('/articles/:id',articleDelete)
 app.post('/upload',upload)
 app.get('/getImage',getImage)
 app.get('/images/:file', (req, res) => {
