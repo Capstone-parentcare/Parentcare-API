@@ -1,15 +1,13 @@
-// require('dotenv').config();
-
 const fs = require('fs');
 const path = require ('path');
 const multiparty = require('multiparty');
 const randomstring	= require("randomstring");
-
-const Media = require('../library/Media.js');
-
-const fileType = require('./library/fileType');
 const images = path.join(__dirname, 'images');
 
+const Media = require('../library/Media.js');
+const fileType = require('../library/fileType');
+global.library = require('../library/library');
+global.libraryAdmin = require('../library/libraryAdmin');
 
 const fileService = {
     getImage: async (req, res) => {
