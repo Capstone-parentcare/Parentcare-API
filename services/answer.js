@@ -30,13 +30,13 @@ const answerService = {
 
     getByQuestionId: async function (req, res){
         const { question_id } = req.params;
-        // get answer using question_id then find doctor and question using doctor_id and question_id
         const getAnswer = await Answers.findAll(
             {where: {question_id: question_id},
             include: [
                 {model: Doctors, as: 'doctor'},
                 {model: Questions, as: 'question'}
-            ]
+            ],
+            attributes: {exclude: ['doctor_id', 'question_id', 'createdAt', 'updatedAt']}
         }).then(function (result) {
             return result
         });
