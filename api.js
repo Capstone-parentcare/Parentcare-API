@@ -19,7 +19,8 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
-app.use('/api', routes)
+app.use('/public', express.static('public'));
+app.use('/api', routes);
 
 app.listen(process.env.PORT_API, () => {
   console.log(`ParentCare API listening on port ${process.env.PORT_API}`);
