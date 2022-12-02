@@ -1,4 +1,4 @@
-const { Answers } = require('../models');
+const { Answers, Questions, Doctors } = require('../models');
 
 const answerService = {
     post: async function (req, res){
@@ -30,7 +30,14 @@ const answerService = {
 
     getByQuestionId: async function (req, res){
         const { question_id } = req.params;
-        const getAnswer = await Answers.findAll({where: {question_id: question_id}}).then(function (result) {
+        // get answer using question_id then find doctor and question using doctor_id and question_id
+        const getAnswer = await Answers.findAll(
+            {where: {question_id: question_id},
+            include: [
+                {model: Doctors, as: 'doctor'},
+                {model: Questions, as: 'question'}
+            ]
+        }).then(function (result) {
             return result
         });
         res.setHeader("Content-Type", "application/json");
