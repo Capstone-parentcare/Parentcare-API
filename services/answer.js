@@ -30,7 +30,7 @@ const answerService = {
 
     getByQuestionId: async function (req, res){
         const { question_id } = req.params;
-        const getAnswer = await Answers.findAll(
+        const getAnswer = await Answers.findOne(
             {where: {question_id: question_id},
             include: [
                 {model: Doctors, as: 'doctor'},
