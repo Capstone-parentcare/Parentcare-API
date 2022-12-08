@@ -1,12 +1,10 @@
 const { Doctors }    = require('../models');
 const md5 = require('md5');
-const { response } = require('express');
-const saltRounds = 10;
 
 
 async function loginDoctor(req, res){
     console.log("req.params", req.query);
-    const doctor    = await Doctors.findAll({where: {email:req.query.email, password:md5(req.query.password)}}).then(function (result) {
+    const doctor = await Doctors.findAll({where: {email:req.query.email, password:md5(req.query.password)}}).then(function (result) {
         return result;
     });
     if(doctor != ''){
