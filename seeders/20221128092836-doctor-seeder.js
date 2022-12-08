@@ -1,7 +1,6 @@
 'use strict';
 
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
+const md5 = require('md5');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -10,13 +9,13 @@ module.exports = {
     const email = 'gancar6@gmail.com';
     const password = '12345678';
 
-    const hashedPassword = bcrypt.hashSync(password, saltRounds);
+    const convertPassword = md5(password);
 
     await queryInterface.bulkInsert('Doctors', [{
       id: 1,
       "username": username,
       "email": email,
-      "password": hashedPassword,
+      "password": convertPassword,
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});
