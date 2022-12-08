@@ -1,14 +1,12 @@
 const { Doctors } = require('../models');
 
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
+const md5 = require('md5');
 
 const doctorService = {
     post: async function (req, res){
         const { username, email, password } = req.body;
-        const hashedPassword = bcrypt.hashSync(password, saltRounds);
-        
-        const createDoctor = await Doctors.create({username, email, password:hashedPassword}).then(function (result) {
+        const convertPassword = md5(password);
+        const createDoctor = await Doctors.create({username, email, password:convertPassword}).then(function (result) {
             return result
         });
         library.response(res, "Success", "Create Success",'', createDoctor);

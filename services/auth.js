@@ -1,11 +1,18 @@
 const { Doctors }    = require('../models');
+const md5 = require('md5');
+
+
 async function loginDoctor(req, res){
-    const admin    = await Doctors.authenticate(req.body.email, req.body.password);
-    if(admin != ''){
-        library.response(res, "Success", "Login Success",'', library.generateJWT(req.body.username, req.body.password));
+    console.log("req.params", req.query);
+    const doctor = await Doctors.findAll({where: {email:req.query.email, password:md5(req.query.password)}}).then(function (result) {
+        return result;
+    });
+    if(doctor != ''){
+        library.response(res, "Success", "Login Success", library.generateJWT(req.query.email, req.query.password), doctor);
     }else{
         library.response(res, "Failed", "Login Failed", []);
     }
+    
 }
 
 module.exports = {

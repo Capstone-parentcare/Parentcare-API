@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "postgres",
-    "password": "isi password masing masing",
+    "password": "garut123",
     "database": "parentCare_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "isi password masing masing",
+    "password": "garut123",
     "database": "parentCare_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
-    "password": "isi password masing masing",
+    "password": "garut123",
     "database": "parentCare_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
