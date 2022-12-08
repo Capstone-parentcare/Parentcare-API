@@ -30,7 +30,7 @@ function response(res, status, message, display_message, data){
         
     };
     res.setHeader("Content-Type", "application/json");
-    res.writeHead(200);
+    res.writeHead(202);
     res.end(JSON.stringify(result, null, 2));
 }
 exports.generateJWT     = generateJWT;

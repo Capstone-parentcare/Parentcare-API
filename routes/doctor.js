@@ -6,5 +6,5 @@ router.post('/', doctorService.post);
 router.get('/', doctorService.get);
 router.get('/:id', doctorService.detail);
 router.delete('/:id', doctorService.delete);
-
+router.get('/login?', doctorService.login)
 module.exports = router;
