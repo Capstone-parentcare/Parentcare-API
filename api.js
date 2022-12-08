@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 
 const md5 = require("md5");
 global.md5 = require("md5");
+const axios         = require('axios');
 global.library = require('./library/library');
 global.libraryAdmin = require('./library/libraryAdmin');
 
